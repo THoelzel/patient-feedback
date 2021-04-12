@@ -1,4 +1,4 @@
-CREATE EXTENSION IF NOT EXISTS "uuid-ossp"
+CREATE EXTENSION IF NOT EXISTS "uuid-ossp";
 
 INSERT INTO zone1.feedback (id, rating, diagnosis_understood, feelings, diagnosis, time_reported)
 VALUES
