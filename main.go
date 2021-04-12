@@ -2,9 +2,10 @@ package main
 
 import (
 	"context"
-	"feedback/input"
+	"feedback/event_input"
 	"feedback/logger"
 	"feedback/models"
+	"feedback/user_input"
 	"fmt"
 	"github.com/jackc/pgx/v4/pgxpool"
 	"os"
@@ -35,9 +36,9 @@ func main() {
 }
 
 func collectData() {
-	file := &input.FileInput{FileName: "patient-feedback-raw-data.json"}
+	file := &event_input.FileInput{FileName: "patient-feedback-raw-data.json"}
 	event := file.NextEvent()
-	feedback := UserInput(event, os.Stdin)
+	feedback := user_input.UserInput(event, os.Stdin)
 
 	env.feedback.Insert(feedback)
 }

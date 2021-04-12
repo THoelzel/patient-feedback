@@ -1,4 +1,4 @@
-package input
+package event_input
 
 import (
 	"encoding/json"
